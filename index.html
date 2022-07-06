@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style/style.css">
+  <title>Article-Preview-Card</title>
+</head>
+<body>
+  <section class="container">
+    <div class="image"></div>
+    <div class="content">
+      <div class="head">
+        <h1>Shift the overall look and feel by adding these wonderful touches to furniture in your home</h1>
+      </div>
+      <div class="para">
+        <p>Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete</p>
+      </div>
+      <div class="info">
+        <img src="/images/avatar-michelle.jpg" alt="">
+        <span class="intro">
+          <p class="name">Michelle Appleton</p>
+          <p class="date">28 Jun 2020</p>
+        </span>
+        <span class="share">
+          <img src="/images/icon-share.svg" alt="">
+          <span class="tooltip">
+            <p>SHARE</p>
+            <img src="/images/icon-facebook.svg" alt="">
+            <img src="/images/icon-twitter.svg" alt="">
+            <img src="/images/icon-pinterest.svg" alt="">
+          </span>
+        </span>
+        <div class="overlay">
+          <p>SHARE</p>
+          <img class="social" src="/images/icon-facebook.svg" alt="">
+          <img class="social" src="/images/icon-twitter.svg" alt="">
+          <img class="social" src="/images/icon-pinterest.svg" alt="">
+          <span class="share overlay-share">
+            <img src="/images/icon-share.svg" alt="">
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    const share = document.querySelector(".share");
+    share.addEventListener("click", () => {
+      const overlay = document.querySelector(".overlay");
+      let property = getComputedStyle(overlay).getPropertyValue("visibility");
+      if(property === "hidden"){
+        overlay.style.visibility = "visible";
+      }
+      const overShare = document.querySelector(".overlay-share");
+      overShare.addEventListener("click", () => {
+        let property = getComputedStyle(overlay).getPropertyValue("visibility");
+        if(property === "visible"){
+          overlay.style.visibility = "hidden";
+        }
+      });
+      const tooltip = document.querySelector(".tooltip");
+      let prop = getComputedStyle(tooltip).getPropertyValue("visibility");
+      if(prop === "hidden"){
+        tooltip.style.visibility = "visible";
+      } else if(prop === "visible"){
+        tooltip.style.visibility = "hidden";
+      }
+    });
+  </script>
+</body>
+</html>

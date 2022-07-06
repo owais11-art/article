@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --dark-grey-blue: hsl(217, 19%, 35%);
+  --dark-blue: hsl(214, 17%, 51%);
+  --grey-blue: hsl(212, 23%, 69%);
+  --light-grey-blue: hsl(210, 46%, 95%);
+  --light: #fff;
+
+  --family: 'Manrope', sans-serif;
+  --weight-thick: 700;
+  --weight-thin: 500;
+}
+html{
+  font-size: 13px;
+  height: 100vh;
+}
+body{
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--light-grey-blue);
+  padding: 20px;
+}
+.container{
+  width: 85vw;
+  position: relative;
+}
+.image{
+  background: url("/images/drawers.jpg") no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 250px;
+  border-radius: 10px 10px 0 0;
+}
+.content{
+  padding: 20px;
+  background: var(--light);
+  border-radius: 0 0 10px 10px;
+}
+.content .head{
+  font-family: var(--family);
+  color: var(--dark-grey-blue);
+  line-height: 1.5;
+  text-align: justify;
+  word-spacing: -1px;
+  font-weight: var(--weight-thick);
+}
+.content .para{
+  font-family: var(--family);
+  color: var(--dark-blue);
+  line-height: 1.5;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  font-weight: var(--weight-thin);
+}
+.content .info{
+  display: flex;
+  justify-content: space-between;
+}
+.info{
+  margin-top: 20px;
+}
+.info img{
+  width: 50px;
+  border-radius: 50%;
+}
+.info .share img{
+  width: 25px;
+}
+.info .share{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--light-grey-blue);
+  display: grid;
+  place-items: center;
+}
+.overlay{
+  visibility: hidden;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  border-radius: 0 0 10px 10px;
+  width: 100%;
+  height: 15%;
+  background: var(--dark-grey-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.overlay .social{
+  margin-left: -30px;
+  width: 35px;
+  height: 35px;
+}
+.overlay p{
+  color: var(--grey-blue);
+  font-size: 20px;
+  font-family: var(--family);
+  font-weight: var(--weight-thin);
+  letter-spacing: 2.3px;
+  margin-left: 19px;
+}
+.overlay .overlay-share{
+  margin-right: 19px;
+}
+.info .intro{
+  justify-self: flex-start;
+  align-self: center;
+}
+.intro .date{
+  font-family: var(--family);
+  color: var(--grey-blue);
+  font-weight: var(--weight-thin);
+}
+.intro .name{
+  font-family: var(--family);
+  color: var(--dark-grey-blue);
+  font-weight: var(--weight-thick);
+}
+.tooltip{
+  display: none;
+}
+/*=============================================MEDIA QURIES=============================================*/
+@media(min-width: 500px) and (max-width: 721px){
+  body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .container{
+    width: 60vw;
+  }
+}
+@media(min-width: 722px) and (max-width: 1187px){
+  body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .container{
+    width: 50vw;
+  }
+}
+@media(min-width: 1187px){
+  body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 894.2px;
+  }
+  .content{
+    grid-column: span 2;
+    border-radius: 0 10px 10px 0;
+    height: 358.7px;
+    width: 650.567px;
+  }
+  .content .head{
+    font-size: 1.5rem;
+  }
+  .content .para{
+    font-size: 1.4rem;
+  }
+  .image{
+    border-radius: 10px 0 0 10px;
+    height: 358.7px;
+    width: 380px;
+  }
+  .info{
+    margin-top: 40px;
+  }
+  .info .intro{
+    font-size: 1.4rem;
+  }
+  .info.share{
+    position: relative;
+  }
+  .tooltip{
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    background: var(--dark-grey-blue);
+    border-radius: 15px;
+    padding: 20px 30px;
+    margin-top: -180px;
+  }
+  .tooltip img{
+    margin-left: 15px;
+  }
+  .tooltip p{
+    color: var(--grey-blue);
+    font-size: 15px;
+    font-family: var(--family);
+    font-weight: var(--weight-thin);
+    letter-spacing: 2.3px;
+  }
+  .tooltip::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -20px;
+  border-width: 20px;
+  border-style: solid;
+  border-color: var(--dark-grey-blue) transparent transparent transparent;
+}
+.overlay{
+  display: none;
+}
+}
